@@ -1,8 +1,7 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, combineReducers,createStore} from 'redux';
 import authReducer from './store/reduces/authReducer';
 import userreducer from './store/reduces/userReducer';
 import {thunk} from 'redux-thunk'
-
 
 const rootReducer=combineReducers({
     authReducer: authReducer,
@@ -10,8 +9,9 @@ const rootReducer=combineReducers({
 
 });
 
+
 export const store =createStore(rootReducer,applyMiddleware((thunk)),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+    window.__REDUX_DEVTOOLS_EXTENSION__  && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
     // import rootReducer from "./store/reduces/rootReducer";
